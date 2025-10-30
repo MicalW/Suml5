@@ -18,7 +18,6 @@ with st.spinner(text='Pracuję nad modelem'):
         tgt_lang="de_DE",
         use_fast=False,
     )
-st.snow()
 col1, col2 = st.columns([2, 1])
 with col1:
     st.title('Tłumacz z języka angielskiego na język niemiecki')
@@ -31,7 +30,7 @@ with col2:
 st.header(
         "Wpisz tekst w języku angielskim w polu poniżej, kliknij w przycisk Tłumacz i poczekaj na wynik tłumaczenia na język niemiecki"
     )
-
+st.snow()
 text = st.text_area(label="Wpisz tekst do przetłumaczenia z angielskiego na niemiecki:", placeholder="np. Good Morning")
         
 if st.button("Tłumacz"):
