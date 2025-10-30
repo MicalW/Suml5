@@ -43,6 +43,7 @@ if st.button("Tłumacz"):
             answer = pipeline(text)
             st.write(answer[0]["translation_text"])
             st.success("Gotowe!")
+st.write("s27568")
 
         
 
