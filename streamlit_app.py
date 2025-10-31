@@ -13,7 +13,6 @@ with st.spinner(text='Pracuję nad modelem'):
         model="facebook/mbart-large-50-many-to-many-mmt",
         tokenizer="facebook/mbart-large-50-many-to-many-mmt",
         device=0,
-        dtype=torch.float16,
         src_lang="en_XX",
         tgt_lang="de_DE",
         use_fast=False,
