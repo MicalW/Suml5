@@ -7,16 +7,12 @@ from PIL import Image
 import torch
 from transformers import pipeline
     
-with st.spinner(text='Pracuję nad modelem'):
-    pipeline = pipeline(
-        task="translation",
-        model="facebook/mbart-large-50-many-to-many-mmt",
-        tokenizer="facebook/mbart-large-50-many-to-many-mmt",
-        device=0,
-        src_lang="en_XX",
-        tgt_lang="de_DE",
-        use_fast=False,
-    )
+def load_pipeline():
+    with st.spinner("Ładuję model "):
+        return pipeline(
+            "translation",
+            model="Helsinki-NLP/opus-mt-en-de"
+        )
 col1, col2 = st.columns([2, 1])
 with col1:
     st.title('Tłumacz z języka angielskiego na język niemiecki')
@@ -36,6 +32,7 @@ if st.button("Tłumacz"):
         if text.strip() == "":
             st.warning("Wpisz tekst!!")
         else:
+            pipeline = load_pipeline()  
             st.subheader("Przetłumaczony tekst: ")
             answer = pipeline(text)
             st.write(answer[0]["translation_text"])
