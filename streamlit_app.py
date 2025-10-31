@@ -30,7 +30,6 @@ with col2:
 st.header(
         "Wpisz tekst w języku angielskim w polu poniżej, kliknij w przycisk Tłumacz i poczekaj na wynik tłumaczenia na język niemiecki"
     )
-st.snow()
 text = st.text_area(label="Wpisz tekst do przetłumaczenia z angielskiego na niemiecki:", placeholder="np. Good Morning")
         
 if st.button("Tłumacz"):
